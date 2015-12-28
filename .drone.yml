@@ -22,7 +22,7 @@ publish:
     load: docker/image.tar
     save:
       destination: docker/image.tar
-      tag: "$$BRANCH"
+      tag: "$$VERSION"
 cache:
   mount:
     - docker/image.tar
