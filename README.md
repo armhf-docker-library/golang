@@ -1,3 +1,5 @@
+[![Build Status](https://armdrone.strahlungsfrei.de/api/badges/armhf-docker-library/golang/status.svg)](https://armdrone.strahlungsfrei.de/armhf-docker-library/golang)
+
 # About this Repo
 
 This is the Git repo of the Docker [official image](https://docs.docker.com/docker-hub/official_repos/) for [golang](https://registry.hub.docker.com/_/golang/). See [the Docker Hub page](https://registry.hub.docker.com/_/golang/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
