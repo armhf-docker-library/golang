@@ -1,0 +1,22 @@
+matrix:
+  VERSION:
+    - 1.5
+
+publish:
+  docker:
+    file: $$VERSION/Dockerfile
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    tag: "$$VERSION"
+    storage_driver: overlay
+
+    # Caching
+    load: docker/image.tar
+    save:
+      destination: docker/image.tar
+      tag: "$$BRANCH"
+cache:
+  mount:
+    - docker/image.tar
