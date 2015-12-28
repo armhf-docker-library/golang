@@ -8,9 +8,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		make \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.4.3
-ENV GOLANG_DOWNLOAD_URL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz
-ENV GOLANG_DOWNLOAD_SHA1 486db10dc571a55c8d795365070f66d343458c48
+ENV GOLANG_VERSION 1.4.2
+ENV GOLANG_DOWNLOAD_URL http://dave.cheney.net/paste/go$GOLANG_VERSION.linux-arm~armv5-1.tar.gz
+
+ENV GOLANG_DOWNLOAD_SHA1 1bcfc8ef9c2aa381722b71b8c8d83cb58e973116
 
 RUN curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
 	&& echo "$GOLANG_DOWNLOAD_SHA1  golang.tar.gz" | sha1sum -c - \
