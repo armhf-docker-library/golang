@@ -2,6 +2,11 @@ matrix:
   VERSION:
     - 1.5
 
+build:
+  image: armhfbuild/alpine:3.2
+  commands:
+    - sed -i 's/FROM /FROM armhfbuild\//' $$VERSION/Dockerfile
+
 publish:
   docker:
     file: $$VERSION/Dockerfile
