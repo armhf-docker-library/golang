@@ -1,6 +1,7 @@
 matrix:
   VERSION:
     - 1.5
+    - 1.4
 
 build:
   image: armhfbuild/alpine:3.2
