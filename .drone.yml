@@ -1,5 +1,6 @@
 matrix:
   VERSION:
+    - "1.4.2"
     - "1.5.3"
     - "1.6rc1"
 
@@ -12,5 +13,5 @@ publish:
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
     tag: "$$VERSION"
-    force_tag: true    
+    force_tag: true
     storage_driver: overlay
