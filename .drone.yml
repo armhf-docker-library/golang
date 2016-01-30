@@ -1,15 +1,16 @@
 matrix:
   VERSION:
-    - 1.5.3
-    - 1.6rc1
+    - "1.5.3"
+    - "1.6rc1"
 
 publish:
   docker:
-    file: $$VERSION/Dockerfile
+    file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
     tag: "$$VERSION"
+    force_tag: true    
     storage_driver: overlay
