@@ -22,6 +22,6 @@ publish:
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
-    tag: "alpine-$$VERSION"
+    tag: "$$VERSION-alpine"
     force_tag: true
     storage_driver: overlay
