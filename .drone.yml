@@ -12,16 +12,85 @@ publish:
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
-    tag: "$$VERSION"
+    tag:
+      - "$$VERSION"
+      - "1.4"
     force_tag: true
     storage_driver: overlay
+    when:
+      VERSION: "1.4.2"
+
   docker:
     file: "$$VERSION/alpine/Dockerfile"
+    context: "$$VERSION/alpine"
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    tag:
+      - "$$VERSION-alpine"
+      - "1.4-alpine"
+    force_tag: true
+    storage_driver: overlay
+    when:
+      VERSION: "1.4.2"
+
+  docker:
+    file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
-    tag: "$$VERSION-alpine"
+    tag:
+      - "$$VERSION"
+      - "1.5"
     force_tag: true
     storage_driver: overlay
+    when:
+      VERSION: "1.5.3"
+
+  docker:
+    file: "$$VERSION/alpine/Dockerfile"
+    context: "$$VERSION/alpine"
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    tag:
+      - "$$VERSION-alpine"
+      - "1.5-alpine"
+    force_tag: true
+    storage_driver: overlay
+    when:
+      VERSION: "1.5.3"
+
+  docker:
+    file: "$$VERSION/Dockerfile"
+    context: "$$VERSION"
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    tag:
+      - "$$VERSION"
+      - "1.6"
+    force_tag: true
+    storage_driver: overlay
+    when:
+      VERSION: "1.6rc1"
+
+  docker:
+    file: "$$VERSION/alpine/Dockerfile"
+    context: "$$VERSION/alpine"
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    tag:
+      - "$$VERSION-alpine"
+      - "1.6-alpine"
+    force_tag: true
+    storage_driver: overlay
+    when:
+      VERSION: "1.6rc1"
