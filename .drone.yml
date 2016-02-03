@@ -15,3 +15,13 @@ publish:
     tag: "$$VERSION"
     force_tag: true
     storage_driver: overlay
+  docker:
+    file: "$$VERSION/alpine/Dockerfile"
+    context: "$$VERSION"
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    tag: "$$VERSION-alpine"
+    force_tag: true
+    storage_driver: overlay
