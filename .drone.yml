@@ -1,8 +1,11 @@
 matrix:
   VERSION:
     - "1.4.2"
+    - "1.4.2/alpine"
     - "1.5.3"
+    - "1.5.3/alpine"
     - "1.6rc1"
+    - "1.6rc1/alpine"
 
 publish:
   docker:
@@ -21,8 +24,8 @@ publish:
       VERSION: "1.4.2"
 
   docker:
-    file: "$$VERSION/alpine/Dockerfile"
-    context: "$$VERSION/alpine"
+    file: "$$VERSION/Dockerfile"
+    context: "$$VERSION"
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
@@ -33,7 +36,7 @@ publish:
     force_tag: true
     storage_driver: overlay
     when:
-      VERSION: "1.4.2"
+      VERSION: "1.4.2/alpine"
 
   docker:
     file: "$$VERSION/Dockerfile"
@@ -51,8 +54,8 @@ publish:
       VERSION: "1.5.3"
 
   docker:
-    file: "$$VERSION/alpine/Dockerfile"
-    context: "$$VERSION/alpine"
+    file: "$$VERSION/Dockerfile"
+    context: "$$VERSION"
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
@@ -63,7 +66,7 @@ publish:
     force_tag: true
     storage_driver: overlay
     when:
-      VERSION: "1.5.3"
+      VERSION: "1.5.3/alpine"
 
   docker:
     file: "$$VERSION/Dockerfile"
@@ -81,8 +84,8 @@ publish:
       VERSION: "1.6rc1"
 
   docker:
-    file: "$$VERSION/alpine/Dockerfile"
-    context: "$$VERSION/alpine"
+    file: "$$VERSION/Dockerfile"
+    context: "$$VERSION"
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
@@ -93,4 +96,4 @@ publish:
     force_tag: true
     storage_driver: overlay
     when:
-      VERSION: "1.6rc1"
+      VERSION: "1.6rc1/alpine"
