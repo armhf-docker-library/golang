@@ -1,7 +1,7 @@
 matrix:
   VARIATION:
-    - "normal"
-    - "alpine"
+    - normal
+    - alpine
   VERSION:
     - "1.4.2"
     - "1.5.3"
@@ -20,7 +20,7 @@ publish:
       - "1.4"
     force_tag: true
     when:
-      VARIATION: "normal"
+      VARIATION: normal
       VERSION: "1.4.2"
 
   docker:
@@ -36,7 +36,7 @@ publish:
     force_tag: true
     when:
       VERSION: "1.4.2"
-      VARIATION: "alpine"
+      VARIATION: alpine
 
   docker:
     file: "$$VERSION/Dockerfile"
