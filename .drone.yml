@@ -53,6 +53,7 @@ publish:
     tag:
       - "$$VERSION"
       - "1.5"
+      - "latest"
     force_tag: true
     when:
       matrix:
