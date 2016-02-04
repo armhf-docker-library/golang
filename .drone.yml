@@ -9,21 +9,6 @@ matrix:
 
 publish:
   docker:
-    file: "$$VERSION/Dockerfile"
-    context: "$$VERSION"
-    username: $$DOCKER_USER
-    email: $$DOCKER_EMAIL
-    password: $$DOCKER_PASSWORD
-    repo: armhfbuild/golang
-    tag:
-      - "$$VERSION"
-      - "1.4"
-    force_tag: true
-    when:
-      VARIATION: normal
-      VERSION: "1.4.2"
-
-  docker:
     file: "$$VERSION/alpine/Dockerfile"
     context: "$$VERSION/alpine"
     username: $$DOCKER_USER
@@ -37,6 +22,21 @@ publish:
     when:
       VERSION: "1.4.2"
       VARIATION: alpine
+      
+  docker:
+    file: "$$VERSION/Dockerfile"
+    context: "$$VERSION"
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    tag:
+      - "$$VERSION"
+      - "1.4"
+    force_tag: true
+    when:
+      VARIATION: normal
+      VERSION: "1.4.2"
 
   docker:
     file: "$$VERSION/Dockerfile"
