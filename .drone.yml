@@ -20,8 +20,8 @@ publish:
       - "1.4"
     force_tag: true
     when:
-      VERSION: "1.4.2"
       VARIATION: "normal"
+      VERSION: "1.4.2"
 
   docker:
     file: "$$VERSION/alpine/Dockerfile"
