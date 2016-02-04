@@ -8,7 +8,7 @@ matrix:
     - 1.6rc1
 
 publish:
-  docker:
+  armhfbuild_1.4.2_alpine:
     file: "$$VERSION/alpine/Dockerfile"
     context: "$$VERSION/alpine"
     username: $$DOCKER_USER
@@ -23,7 +23,7 @@ publish:
       VERSION: 1.4.2
       VARIATION: alpine
       
-  docker:
+  armhfbuild_1.4.2:
     file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
     username: $$DOCKER_USER
@@ -38,7 +38,7 @@ publish:
       VARIATION: normal
       VERSION: 1.4.2
 
-  docker:
+  armhfbuild_1.5.3:
     file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
     username: $$DOCKER_USER
@@ -53,7 +53,7 @@ publish:
       VERSION: 1.5.3
       VARIATION: normal
 
-  docker:
+  armhfbuild_1.5.3_alpine:
     file: "$$VERSION/alpine/Dockerfile"
     context: "$$VERSION/alpine"
     username: $$DOCKER_USER
@@ -68,7 +68,7 @@ publish:
       VERSION: 1.5.3
       VARIATION: alpine
 
-  docker:
+  armhfbuild_1.6rc1:
     file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
     username: $$DOCKER_USER
@@ -83,7 +83,7 @@ publish:
       VERSION: 1.6rc1
       VARIATION: normal
 
-  docker:
+  armhfbuild_1.6rc1_alpine:
     file: "$$VERSION/alpine/Dockerfile"
     context: "$$VERSION/alpine"
     username: $$DOCKER_USER
