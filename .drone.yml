@@ -21,8 +21,9 @@ publish:
       - "1.4-alpine"
     force_tag: true
     when:
-      VERSION: 1.4.2
-      VARIATION: alpine
+      matrix:
+        VERSION: 1.4.2
+        VARIATION: alpine
       
   armhfbuild_1.4.2:
     image: armhfplugins/drone-docker
@@ -37,8 +38,9 @@ publish:
       - "1.4"
     force_tag: true
     when:
-      VARIATION: normal
-      VERSION: 1.4.2
+      matrix:    
+        VARIATION: normal
+        VERSION: 1.4.2
 
   armhfbuild_1.5.3:
     image: armhfplugins/drone-docker
@@ -53,8 +55,9 @@ publish:
       - "1.5"
     force_tag: true
     when:
-      VERSION: 1.5.3
-      VARIATION: normal
+      matrix:
+        VERSION: 1.5.3
+        VARIATION: normal
 
   armhfbuild_1.5.3_alpine:
     image: armhfplugins/drone-docker
@@ -69,8 +72,9 @@ publish:
       - "1.5-alpine"
     force_tag: true
     when:
-      VERSION: 1.5.3
-      VARIATION: alpine
+      matrix:
+        VERSION: 1.5.3
+        VARIATION: alpine
 
   armhfbuild_1.6rc1:
     image: armhfplugins/drone-docker
@@ -85,8 +89,9 @@ publish:
       - "1.6"
     force_tag: true
     when:
-      VERSION: 1.6rc1
-      VARIATION: normal
+      matrix:
+        VERSION: 1.6rc1
+        VARIATION: normal
 
   armhfbuild_1.6rc1_alpine:
     image: armhfplugins/drone-docker
@@ -101,5 +106,6 @@ publish:
       - "1.6-alpine"
     force_tag: true
     when:
-      VERSION: 1.6rc1
-      VARIATION: alpine
+      matrix:
+        VERSION: 1.6rc1
+        VARIATION: alpine
