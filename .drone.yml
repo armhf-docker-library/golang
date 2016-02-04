@@ -25,7 +25,7 @@ publish:
 
   docker:
     file: "$$VERSION/alpine/Dockerfile"
-    context: "alpine/$$VERSION"
+    context: "$$VERSION/alpine"
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
@@ -55,7 +55,7 @@ publish:
 
   docker:
     file: "$$VERSION/alpine/Dockerfile"
-    context: "alpine/$$VERSION"
+    context: "$$VERSION/alpine"
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
@@ -85,7 +85,7 @@ publish:
 
   docker:
     file: "$$VERSION/alpine/Dockerfile"
-    context: "alpine/$$VERSION"
+    context: "$$VERSION/alpine"
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
