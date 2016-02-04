@@ -3,9 +3,9 @@ matrix:
     - normal
     - alpine
   VERSION:
-    - "1.4.2"
-    - "1.5.3"
-    - "1.6rc1"
+    - 1.4.2
+    - 1.5.3
+    - 1.6rc1
 
 publish:
   docker:
@@ -20,7 +20,7 @@ publish:
       - "1.4-alpine"
     force_tag: true
     when:
-      VERSION: "1.4.2"
+      VERSION: 1.4.2
       VARIATION: alpine
       
   docker:
@@ -36,7 +36,7 @@ publish:
     force_tag: true
     when:
       VARIATION: normal
-      VERSION: "1.4.2"
+      VERSION: 1.4.2
 
   docker:
     file: "$$VERSION/Dockerfile"
@@ -50,8 +50,8 @@ publish:
       - "1.5"
     force_tag: true
     when:
-      VERSION: "1.5.3"
-      VARIATION: "normal"
+      VERSION: 1.5.3
+      VARIATION: normal
 
   docker:
     file: "$$VERSION/alpine/Dockerfile"
@@ -65,8 +65,8 @@ publish:
       - "1.5-alpine"
     force_tag: true
     when:
-      VERSION: "1.5.3"
-      VARIATION: "alpine"
+      VERSION: 1.5.3
+      VARIATION: alpine
 
   docker:
     file: "$$VERSION/Dockerfile"
@@ -80,8 +80,8 @@ publish:
       - "1.6"
     force_tag: true
     when:
-      VERSION: "1.6rc1"
-      VARIATION: "normal"
+      VERSION: 1.6rc1
+      VARIATION: normal
 
   docker:
     file: "$$VERSION/alpine/Dockerfile"
@@ -95,5 +95,5 @@ publish:
       - "1.6-alpine"
     force_tag: true
     when:
-      VERSION: "1.6rc1"
-      VARIATION: "alpine"
+      VERSION: 1.6rc1
+      VARIATION: alpine
