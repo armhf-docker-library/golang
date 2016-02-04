@@ -19,7 +19,6 @@ publish:
       - "$$VERSION"
       - "1.4"
     force_tag: true
-    storage_driver: overlay
     when:
       VERSION: "1.4.2"
       VARIATION: "normal"
@@ -35,7 +34,6 @@ publish:
       - "$$VERSION-alpine"
       - "1.4-alpine"
     force_tag: true
-    storage_driver: overlay
     when:
       VERSION: "1.4.2"
       VARIATION: "alpine"
@@ -51,7 +49,6 @@ publish:
       - "$$VERSION"
       - "1.5"
     force_tag: true
-    storage_driver: overlay
     when:
       VERSION: "1.5.3"
       VARIATION: "normal"
@@ -67,7 +64,6 @@ publish:
       - "$$VERSION-alpine"
       - "1.5-alpine"
     force_tag: true
-    storage_driver: overlay
     when:
       VERSION: "1.5.3"
       VARIATION: "alpine"
@@ -83,7 +79,6 @@ publish:
       - "$$VERSION"
       - "1.6"
     force_tag: true
-    storage_driver: overlay
     when:
       VERSION: "1.6rc1"
       VARIATION: "normal"
@@ -99,7 +94,6 @@ publish:
       - "$$VERSION-alpine"
       - "1.6-alpine"
     force_tag: true
-    storage_driver: overlay
     when:
       VERSION: "1.6rc1"
       VARIATION: "alpine"
