@@ -9,6 +9,7 @@ matrix:
 
 publish:
   armhfbuild_1.4.2_alpine:
+    image: armhfplugins/drone-docker
     file: "$$VERSION/alpine/Dockerfile"
     context: "$$VERSION/alpine"
     username: $$DOCKER_USER
@@ -24,6 +25,7 @@ publish:
       VARIATION: alpine
       
   armhfbuild_1.4.2:
+    image: armhfplugins/drone-docker
     file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
     username: $$DOCKER_USER
@@ -39,6 +41,7 @@ publish:
       VERSION: 1.4.2
 
   armhfbuild_1.5.3:
+    image: armhfplugins/drone-docker
     file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
     username: $$DOCKER_USER
@@ -54,6 +57,7 @@ publish:
       VARIATION: normal
 
   armhfbuild_1.5.3_alpine:
+    image: armhfplugins/drone-docker
     file: "$$VERSION/alpine/Dockerfile"
     context: "$$VERSION/alpine"
     username: $$DOCKER_USER
@@ -69,6 +73,7 @@ publish:
       VARIATION: alpine
 
   armhfbuild_1.6rc1:
+    image: armhfplugins/drone-docker
     file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
     username: $$DOCKER_USER
@@ -84,6 +89,7 @@ publish:
       VARIATION: normal
 
   armhfbuild_1.6rc1_alpine:
+    image: armhfplugins/drone-docker
     file: "$$VERSION/alpine/Dockerfile"
     context: "$$VERSION/alpine"
     username: $$DOCKER_USER
