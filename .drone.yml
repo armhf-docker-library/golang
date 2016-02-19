@@ -1,11 +1,11 @@
 matrix:
-  FLAVOR:
-    - "default"
-    - "alpine"
   VERSION:
     # - "1.4.2"
-    - "1.5.3"
+    # - "1.5.3"
     - "1.6"
+  FLAVOR:
+    - "default"
+    # - "alpine"
 
 publish:
   hub_1.4.2:
@@ -51,7 +51,6 @@ publish:
     tag:
       - "1.5.3"
       - "1.5"
-      - "latest"
     force_tag: true
     when:
       VERSION: "1.5.3"
