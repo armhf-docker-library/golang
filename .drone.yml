@@ -8,7 +8,7 @@ matrix:
     # - "alpine"
 
 publish:
-  hub_1.4.2:
+  hub_1_4_2:
     image: armhfplugins/drone-docker
     file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
@@ -24,7 +24,7 @@ publish:
       VERSION: "1.4.2"
       FLAVOR: "default"
 
-  hub_1.4.2-alpine:
+  hub_1_4_2_alpine:
     image: armhfplugins/drone-docker
     file: "$$VERSION/alpine/Dockerfile"
     context: "alpine/$$VERSION"
@@ -40,7 +40,7 @@ publish:
       VERSION: "1.4.2"
       FLAVOR: "alpine"
 
-  hub_1.5.3:
+  hub_1_5_3:
     image: armhfplugins/drone-docker
     file: "$$VERSION/Dockerfile"
     context: "$$VERSION"
@@ -56,7 +56,7 @@ publish:
       VERSION: "1.5.3"
       FLAVOR: "default"
 
-  hub_1.5.3-alpine:
+  hub_1_5_3_alpine:
     image: armhfplugins/drone-docker
     file: "$$VERSION/alpine/Dockerfile"
     context: "$$VERSION/alpine"
@@ -72,7 +72,7 @@ publish:
       VERSION: "1.5.3"
       FLAVOR: "alpine"
 
-  hub_1.6:
+  hub_1_6:
     image: armhfplugins/drone-docker
     file: "$$VERSION/Dockerfile-$$FLAVOR"
     context: "$$VERSION"
@@ -96,7 +96,7 @@ publish:
       VERSION: "1.6"
       FLAVOR: "default"
 
-  hub_1.6-alpine:
+  hub_1_6_alpine:
     image: armhfplugins/drone-docker
     file: "$$VERSION/Dockerfile-$$FLAVOR"
     context: "$$VERSION"
