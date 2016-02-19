@@ -1,11 +1,11 @@
 matrix:
   VERSION:
     # - "1.4.2"
-    # - "1.5.3"
+    - "1.5.3"
     - "1.6"
   FLAVOR:
     - "default"
-    # - "alpine"
+    - "alpine"
 
 publish:
   hub_1_4_2:
@@ -21,8 +21,9 @@ publish:
       - "1.4-alpine"
     force_tag: true
     when:
-      VERSION: "1.4.2"
-      FLAVOR: "default"
+      matrix:
+        VERSION: "1.4.2"
+        FLAVOR: "default"
 
   hub_1_4_2_alpine:
     image: armhfplugins/drone-docker
@@ -37,8 +38,9 @@ publish:
       - "1.4-alpine"
     force_tag: true
     when:
-      VERSION: "1.4.2"
-      FLAVOR: "alpine"
+      matrix:
+        VERSION: "1.4.2"
+        FLAVOR: "alpine"
 
   hub_1_5_3:
     image: armhfplugins/drone-docker
@@ -53,8 +55,9 @@ publish:
       - "1.5"
     force_tag: true
     when:
-      VERSION: "1.5.3"
-      FLAVOR: "default"
+      matrix:
+        VERSION: "1.5.3"
+        FLAVOR: "default"
 
   hub_1_5_3_alpine:
     image: armhfplugins/drone-docker
@@ -69,8 +72,9 @@ publish:
       - "1.5-alpine"
     force_tag: true
     when:
-      VERSION: "1.5.3"
-      FLAVOR: "alpine"
+      matrix:
+        VERSION: "1.5.3"
+        FLAVOR: "alpine"
 
   hub_1_6:
     image: armhfplugins/drone-docker
@@ -93,8 +97,9 @@ publish:
       - "1"
       - "latest"
     when:
-      VERSION: "1.6"
-      FLAVOR: "default"
+      matrix:
+        VERSION: "1.6"
+        FLAVOR: "default"
 
   hub_1_6_alpine:
     image: armhfplugins/drone-docker
@@ -117,5 +122,6 @@ publish:
       - "1-alpine"
       - "alpine"
     when:
-      VERSION: "1.6"
-      FLAVOR: "alpine"
+      matrix:
+        VERSION: "1.6"
+        FLAVOR: "alpine"
