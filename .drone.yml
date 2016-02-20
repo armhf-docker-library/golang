@@ -6,6 +6,7 @@ matrix:
     - "1.6"
   FLAVOR:
     - "default"
+    # - "jessie"
     - "alpine"
 
 publish:
