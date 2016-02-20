@@ -9,11 +9,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 ARG GOLANG_VERSION=1.4.2
-ARG GOLANG_DOWNLOAD_URL=http://dave.cheney.net/paste/go$GOLANG_VERSION.linux-arm~multiarch-armv7-1.tar.gz
-ARG GOLANG_DOWNLOAD_SHA1=607573c55dc89d135c3c9c84bba6ba6095a37a1e
+ARG GOLANG_BIN_URL=http://dave.cheney.net/paste/go$GOLANG_VERSION.linux-arm~multiarch-armv7-1.tar.gz
+ARG GOLANG_BIN_SHA1=607573c55dc89d135c3c9c84bba6ba6095a37a1e
 
-RUN curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
-  && echo "$GOLANG_DOWNLOAD_SHA1  golang.tar.gz" | sha1sum -c - \
+RUN curl -fsSL "$GOLANG_BIN_URL" -o golang.tar.gz \
+  && echo "$GOLANG_BIN_SHA1  golang.tar.gz" | sha1sum -c - \
   && tar -C /usr/local -xzf golang.tar.gz \
   && rm golang.tar.gz
 
