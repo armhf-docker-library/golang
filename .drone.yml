@@ -56,7 +56,7 @@ publish:
     storage_driver: overlay
     build_args:
       - GOLANG_VERSION=1.4.3
-      - GOLANG_BIN_SHA256=299a6fd8f8adfdce15bc06bde926e7b252ae8e24dd5b16b7d8791ed79e7b5e9b
+      - GOLANG_SRC_SHA256=299a6fd8f8adfdce15bc06bde926e7b252ae8e24dd5b16b7d8791ed79e7b5e9b
     tag: ["1.4.3", "1.4"]
     when:
       matrix:
@@ -74,7 +74,7 @@ publish:
     storage_driver: overlay
     build_args:
       - GOLANG_VERSION=1.4.3
-      - GOLANG_BIN_SHA256=299a6fd8f8adfdce15bc06bde926e7b252ae8e24dd5b16b7d8791ed79e7b5e9b
+      - GOLANG_SRC_SHA256=299a6fd8f8adfdce15bc06bde926e7b252ae8e24dd5b16b7d8791ed79e7b5e9b
     tag: ["1.4.3-alpine", "1.4-alpine"]
     when:
       matrix:
