@@ -56,7 +56,7 @@ publish:
     storage_driver: overlay
     build_args:
       - GOLANG_VERSION=1.4.3
-      - GOLANG_BIN_SHA256=9947fc705b0b841b5938c48b22dc33e9647ec0752bae66e50278df4f23f64959
+      - GOLANG_BIN_SHA256=299a6fd8f8adfdce15bc06bde926e7b252ae8e24dd5b16b7d8791ed79e7b5e9b
     tag: ["1.4.3", "1.4"]
     when:
       matrix:
@@ -74,7 +74,7 @@ publish:
     storage_driver: overlay
     build_args:
       - GOLANG_VERSION=1.4.3
-      - GOLANG_BIN_SHA256=9947fc705b0b841b5938c48b22dc33e9647ec0752bae66e50278df4f23f64959
+      - GOLANG_BIN_SHA256=299a6fd8f8adfdce15bc06bde926e7b252ae8e24dd5b16b7d8791ed79e7b5e9b
     tag: ["1.4.3-alpine", "1.4-alpine"]
     when:
       matrix:
@@ -83,7 +83,7 @@ publish:
 
   hub_1.5.3:
     image: armhfplugins/drone-docker:docker-caching
-    # file: Dockerfile_1.5.3_bin_$$FLAVOR
+    # file: Dockerfile_src_1.5.3_$$FLAVOR
     file: Dockerfile_bin_1.5.3_$$FLAVOR
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
@@ -93,7 +93,8 @@ publish:
     storage_driver: overlay
     build_args:
       - GOLANG_VERSION=1.5.3
-      - GOLANG_SRC_SHA256=754e06dab1c31ab168fc9db9e32596734015ea9e24bc44cae7f237f417ce4efe
+      # - GOLANG_SRC_SHA256=754e06dab1c31ab168fc9db9e32596734015ea9e24bc44cae7f237f417ce4efe
+      - GOLANG_DOWNLOAD_SHA1=91351355746af99659366d12dc85de11e8d14522
     tag: ["1.5.3", "1.5"]
     when:
       matrix:
