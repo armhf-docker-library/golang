@@ -1,6 +1,6 @@
 matrix:
   VERSION:
-    # - "1.4.2"
+    # - "1.4.3"
     - "1.5.3"
     - "1.6"
   FLAVOR:
@@ -10,50 +10,86 @@ matrix:
 publish:
   hub_1.4.2:
     image: armhfplugins/drone-docker:docker-caching
-    file: "$$VERSION/Dockerfile"
-    context: "$$VERSION"
+    file: Dockerfile-$$FLAVOR
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
-    tag:
-      - "$$VERSION-alpine"
-      - "1.4-alpine"
     force_tag: true
+    storage_driver: overlay
+    build_args:
+      - GOLANG_VERSION=1.4.3
+      - GOLANG_BIN_SHA256=4340efa4836a7ddfc61d00e396e0f496a5ca5cf8bc598dc3b5f50707e6107f59
+    tag: ["1.4.3", "1.4"]
     when:
       matrix:
-        VERSION: "1.4.2"
+        VERSION: "1.4.3"
         FLAVOR: "default"
+
+  hub_1.4.3-alpine:
+    image: armhfplugins/drone-docker:docker-caching
+    file: Dockerfile_src_$$FLAVOR
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    force_tag: true
+    storage_driver: overlay
+    build_args:
+      - GOLANG_VERSION=1.4.3
+      - GOLANG_BIN_SHA256=4340efa4836a7ddfc61d00e396e0f496a5ca5cf8bc598dc3b5f50707e6107f59
+    tag: ["1.4.3-alpine", "1.4-alpine"]
+    when:
+      matrix:
+        VERSION: "1.4.3"
+        FLAVOR: "alpine"
 
   hub_1.4.2-alpine:
     image: armhfplugins/drone-docker:docker-caching
-    file: "$$VERSION/alpine/Dockerfile"
-    context: "alpine/$$VERSION"
+    file: Dockerfile_src_$$FLAVOR
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
-    tag:
-      - "1.4.2-alpine"
-      - "1.4-alpine"
     force_tag: true
+    storage_driver: overlay
+    build_args:
+      - GOLANG_VERSION=1.4.2
+      - GOLANG_SRC_SHA256=460caac03379f746c473814a65223397e9c9a2f6
+    tag: ["1.4.2-alpine"]
     when:
       matrix:
         VERSION: "1.4.2"
         FLAVOR: "alpine"
 
-  hub_1.5.3:
+  hub_1.4.3:
     image: armhfplugins/drone-docker:docker-caching
-    file: "$$VERSION/Dockerfile"
-    context: "$$VERSION"
+    file: Dockerfile_src_$$FLAVOR
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
-    tag:
-      - "1.5.3"
-      - "1.5"
     force_tag: true
+    storage_driver: overlay
+    build_args:
+      - GOLANG_VERSION=1.4.3
+      - GOLANG_BIN_SHA256=4340efa4836a7ddfc61d00e396e0f496a5ca5cf8bc598dc3b5f50707e6107f59
+    tag: ["1.4.3", "1.4"]
+    when:
+      matrix:
+        VERSION: "1.4.3"
+        FLAVOR: "default"
+
+  hub_1.5.3:
+    image: armhfplugins/drone-docker:docker-caching
+    file: Dockerfile_1.5.3_bin_$$FLAVOR
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/golang
+    force_tag: true
+    storage_driver: overlay
+    tag: ["1.5.3", "1.5"]
     when:
       matrix:
         VERSION: "1.5.3"
@@ -61,16 +97,17 @@ publish:
 
   hub_1.5.3-alpine:
     image: armhfplugins/drone-docker:docker-caching
-    file: "$$VERSION/alpine/Dockerfile"
-    context: "$$VERSION/alpine"
+    file: Dockerfile_src_$$FLAVOR
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
     repo: armhfbuild/golang
-    tag:
-      - "1.5.3-alpine"
-      - "1.5-alpine"
     force_tag: true
+    storage_driver: overlay
+    build_args:
+      - GOLANG_VERSION=1.5.3
+      - GOLANG_SRC_SHA256=754e06dab1c31ab168fc9db9e32596734015ea9e24bc44cae7f237f417ce4efe
+    tag: ["1.5.3-alpine", "1.5-alpine"]
     when:
       matrix:
         VERSION: "1.5.3"
@@ -78,8 +115,7 @@ publish:
 
   hub_1.6:
     image: armhfplugins/drone-docker:docker-caching
-    file: "$$VERSION/Dockerfile-$$FLAVOR"
-    context: "$$VERSION"
+    file: Dockerfile_bin_$$FLAVOR
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
@@ -88,12 +124,8 @@ publish:
     storage_driver: overlay
     build_args:
       - GOLANG_VERSION=1.6
-      - GOLANG_BIN_SHA256=4340efa4836a7ddfc61d00e396e0f496a5ca5cf8bc598dc3b5f50707e6107f59
-    tag:
-      - "1.6.0"
-      - "1.6"
-      - "1"
-      - "latest"
+      - GOLANG_BIN_SHA256=c6c1859acd3727f23f900bde855b5fd0f74d36b1d10f6dd7beddebfb57513d0b
+    tag: ["1.6.0", "1.6", "1", "latest"]
     when:
       matrix:
         VERSION: "1.6"
@@ -101,8 +133,7 @@ publish:
 
   hub_1.6-alpine:
     image: armhfplugins/drone-docker:docker-caching
-    file: "$$VERSION/Dockerfile-$$FLAVOR"
-    context: "$$VERSION"
+    file: Dockerfile_src_$$FLAVOR
     username: $$DOCKER_USER
     email: $$DOCKER_EMAIL
     password: $$DOCKER_PASSWORD
@@ -111,13 +142,8 @@ publish:
     storage_driver: overlay
     build_args:
       - GOLANG_VERSION=1.6
-      - ARCH=armv6l
       - GOLANG_SRC_SHA256=a96cce8ce43a9bf9b2a4c7d470bc7ee0cb00410da815980681c8353218dcf146
-    tag:
-      - "1.6.0-alpine"
-      - "1.6-alpine"
-      - "1-alpine"
-      - "alpine"
+    tag: ["1.6.0-alpine", "1.6-alpine", "1-alpine", "alpine"]
     when:
       matrix:
         VERSION: "1.6"
